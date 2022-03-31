@@ -1,6 +1,7 @@
 package ru.vzotov.fx.ympicker;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
@@ -17,6 +18,7 @@ public class YmDemo extends Application {
     public void start(Stage primaryStage) throws Exception {
         final FlowPane flow = new FlowPane();
         final Pane root = new Pane(flow);
+        flow.setPadding(new Insets(16));
 
         flow.getChildren().add(new Label("Year and month"));
         flow.getChildren().add(new YearMonthPicker());

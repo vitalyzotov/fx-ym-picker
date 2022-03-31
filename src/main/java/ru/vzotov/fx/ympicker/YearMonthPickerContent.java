@@ -7,11 +7,14 @@ import javafx.scene.layout.VBox;
 import java.time.YearMonth;
 
 public class YearMonthPickerContent extends VBox {
+    private static final String DEFAULT_STYLE_CLASS = "yearmonth-picker-content";
+
     protected final YearMonthPicker yearMonthPicker;
 
     public YearMonthPickerContent(YearMonthPicker yearMonthPicker) {
         super();
         this.yearMonthPicker = yearMonthPicker;
+        getStyleClass().add(DEFAULT_STYLE_CLASS);
     }
 
     protected void commit() {

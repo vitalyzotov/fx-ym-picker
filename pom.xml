@@ -71,6 +71,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -79,19 +80,7 @@
             <!-- JavaFX -->
             <dependency>
                 <groupId>org.openjfx</groupId>
-                <artifactId>javafx-base</artifactId>
-                <version>${javafx.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.openjfx</groupId>
                 <artifactId>javafx-controls</artifactId>
-                <version>${javafx.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-graphics</artifactId>
                 <version>${javafx.version}</version>
             </dependency>
         </dependencies>

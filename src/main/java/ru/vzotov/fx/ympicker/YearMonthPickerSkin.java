@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.skin.TextFieldSkin;
 import javafx.scene.layout.HBox;
 import javafx.stage.Popup;
+import javafx.stage.PopupWindow;
 
 import java.time.YearMonth;
 
@@ -80,9 +81,10 @@ public class YearMonthPickerSkin extends TextFieldSkin {
         } else {
             popup = new Popup();
             popup.getContent().add(yearMonthPickerContent);
+            popup.setAnchorLocation(PopupWindow.AnchorLocation.WINDOW_TOP_RIGHT);
 
             final Bounds localBounds = getSkinnable().getBoundsInLocal();
-            final Point2D pt = getSkinnable().localToScreen(localBounds.getMinX(), localBounds.getMaxY());
+            final Point2D pt = getSkinnable().localToScreen(localBounds.getMaxX(), localBounds.getMaxY());
             popup.show(getSkinnable(), pt.getX(), pt.getY());
 
             popup.requestFocus();

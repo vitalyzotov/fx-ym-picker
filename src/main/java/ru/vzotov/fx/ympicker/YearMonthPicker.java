@@ -11,7 +11,6 @@ import javafx.util.StringConverter;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class YearMonthPicker extends TextField {
 

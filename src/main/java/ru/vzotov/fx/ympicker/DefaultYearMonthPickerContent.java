@@ -18,6 +18,10 @@ import java.time.format.TextStyle;
 import java.util.Locale;
 
 public class DefaultYearMonthPickerContent extends YearMonthPickerContent {
+    private static final String STYLE_BUTTON_PREV = "btn-prev";
+    private static final String STYLE_BUTTON_NEXT = "btn-next";
+    private static final String STYLE_BUTTON_MONTH = "btn-month";
+    private static final String STYLE_INPUT_YEAR = "input-year";
 
     private final Locale locale = Locale.getDefault();
 
@@ -35,6 +39,7 @@ public class DefaultYearMonthPickerContent extends YearMonthPickerContent {
         setSpacing(4);
 
         yearField = new TextField();
+        yearField.getStyleClass().add(STYLE_INPUT_YEAR);
         yearField.setMaxWidth(50);
         yearField.setAlignment(Pos.CENTER);
         yearField.setOnAction(event -> {
@@ -48,12 +53,14 @@ public class DefaultYearMonthPickerContent extends YearMonthPickerContent {
         });
 
         prevYear = new Button("<");
+        prevYear.getStyleClass().add(STYLE_BUTTON_PREV);
         prevYear.setOnAction(event -> {
             YearMonth ym = getDisplayedYearMonth();
             setDisplayedYearMonth(ym.withYear(Math.max(ym.getYear() - 1, Year.MIN_VALUE)));
         });
 
         nextYear = new Button(">");
+        nextYear.getStyleClass().add(STYLE_BUTTON_NEXT);
         nextYear.setOnAction(event -> {
             YearMonth ym = getDisplayedYearMonth();
             setDisplayedYearMonth(ym.withYear(Math.min(ym.getYear() + 1, Year.MAX_VALUE)));
@@ -70,6 +77,7 @@ public class DefaultYearMonthPickerContent extends YearMonthPickerContent {
         monthButtons = new ToggleButton[Month.values().length];
         for (Month month : Month.values()) {
             final ToggleButton btn = new ToggleButton(month.getDisplayName(TextStyle.SHORT_STANDALONE, locale));
+            btn.getStyleClass().add(STYLE_BUTTON_MONTH);
             btn.setUserData(month);
             btn.setToggleGroup(monthGroup);
             btn.setOnAction(this::onMonthSelected);
