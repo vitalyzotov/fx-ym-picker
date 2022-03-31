@@ -10,7 +10,8 @@ This component was tested with JDK 17 and JavaFX runtime 17.0.1.
 
 Popup content can be customized by using factory function passed into constructor.
 
-    YearMonthPicker(YearMonth value, Function<YearMonthPicker, ? extends YearMonthPickerContent> contentFactory)
+    YearMonthPicker(YearMonth value, 
+            Function<YearMonthPicker, ? extends YearMonthPickerContent> contentFactory)
 
 ## Styling
 
