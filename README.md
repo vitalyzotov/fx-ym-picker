@@ -17,6 +17,8 @@ Popup content can be customized by using factory function passed into constructo
 
 "yearmonth-picker" - default style class for YearMonthPicker.
 
+"arrow-button" - style class for arrow button.
+
 "yearmonth-picker-content" - default style class for Popup content of the picker.
 
 "btn-prev" - style class for the previous year button
@@ -26,3 +28,5 @@ Popup content can be customized by using factory function passed into constructo
 "input-year" - style class for the year input field
 
 "btn-month" - style class for month buttons
+
+"grid" - style class for grid of month buttons

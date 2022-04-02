@@ -12,10 +12,14 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.skin.TextFieldSkin;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
 import javafx.stage.Popup;
 import javafx.stage.PopupWindow;
 
 import java.time.YearMonth;
+
+import static ru.vzotov.fx.ympicker.YearMonthPicker.STYLE_BUTTON_ARROW;
+import static ru.vzotov.fx.ympicker.YearMonthPicker.STYLE_ICON_ARROW;
 
 public class YearMonthPickerSkin extends TextFieldSkin {
 
@@ -38,8 +42,12 @@ public class YearMonthPickerSkin extends TextFieldSkin {
         control.valueProperty().addListener(this::valueChanged);
         valueChanged(control.valueProperty(), null, control.getValue());
 
+        Region icon = new Region();
+        icon.getStyleClass().add(STYLE_ICON_ARROW);
 
         Button arrow = new Button();
+        arrow.getStyleClass().add(STYLE_BUTTON_ARROW);
+        arrow.setGraphic(icon);
         arrow.textProperty().bind(control.arrowSymbolProperty());
         arrow.setCursor(Cursor.DEFAULT);
         arrow.setOnAction(this::onArrow);

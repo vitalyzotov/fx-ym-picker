@@ -15,6 +15,8 @@ import java.util.function.Function;
 public class YearMonthPicker extends TextField {
 
     private static final String DEFAULT_STYLE_CLASS = "yearmonth-picker";
+    public static final String STYLE_BUTTON_ARROW = "arrow-button";
+    public static final String STYLE_ICON_ARROW = "icon";
 
     private static final StringConverter<YearMonth> defaultConverter = new YearMonthStringConverter(
             DateTimeFormatter.ofPattern("yyyy-MM"),

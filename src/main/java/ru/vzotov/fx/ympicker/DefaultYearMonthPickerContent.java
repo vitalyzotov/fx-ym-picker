@@ -22,6 +22,7 @@ public class DefaultYearMonthPickerContent extends YearMonthPickerContent {
     private static final String STYLE_BUTTON_NEXT = "btn-next";
     private static final String STYLE_BUTTON_MONTH = "btn-month";
     private static final String STYLE_INPUT_YEAR = "input-year";
+    private static final String STYLE_GRID = "grid";
 
     private final Locale locale = Locale.getDefault();
 
@@ -35,8 +36,6 @@ public class DefaultYearMonthPickerContent extends YearMonthPickerContent {
 
     public DefaultYearMonthPickerContent(YearMonthPicker yearMonthPicker) {
         super(yearMonthPicker);
-
-        setSpacing(4);
 
         yearField = new TextField();
         yearField.getStyleClass().add(STYLE_INPUT_YEAR);
@@ -69,8 +68,7 @@ public class DefaultYearMonthPickerContent extends YearMonthPickerContent {
         final BorderPane years = new BorderPane(yearField, null, nextYear, null, prevYear);
 
         final GridPane months = new GridPane();
-        months.setVgap(4);
-        months.setHgap(4);
+        months.getStyleClass().add(STYLE_GRID);
         VBox.setVgrow(months, Priority.ALWAYS);
 
         monthGroup = new ToggleGroup();

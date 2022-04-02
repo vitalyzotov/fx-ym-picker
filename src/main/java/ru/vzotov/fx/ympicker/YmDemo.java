@@ -24,6 +24,8 @@ public class YmDemo extends Application {
         flow.getChildren().add(new YearMonthPicker());
 
         Scene scene = new Scene(root, 800, 600);
+        scene.getStylesheets().add("/ympicker.css");
+
         primaryStage.setScene(scene);
         primaryStage.show();
     }

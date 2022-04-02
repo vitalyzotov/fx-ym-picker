@@ -1,0 +1,12 @@
+.yearmonth-picker .arrow-button {
+    -fx-content-display: text-only;
+}
+
+.yearmonth-picker-content {
+    -fx-spacing: 4;
+}
+
+.yearmonth-picker-content .grid {
+    -fx-vgap: 4;
+    -fx-hgap: 4;
+}
